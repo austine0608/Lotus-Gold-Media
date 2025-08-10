@@ -121,7 +121,7 @@ function renderPosts() {
         postElement.dataset.id = post.id;
         postElement.innerHTML = `
             <h3 class="post-title">${post.title}</h3>
-            <p>${post.content.substring(0, 100)}${post.content.length > 100 ? '...' : ''}</p>
+            <p>${post.content.substring(0, 100)}${post.content.length > 100000 ? '...' : ''}</p>
             <p><small>Published: ${new Date(post.date).toLocaleDateString()}</small></p>
             <div class="post-actions">
                 <button class="edit-btn" data-id="${post.id}">Edit</button>
@@ -267,4 +267,5 @@ function escapeHTML(html) {
     const div = document.createElement('div');
     div.textContent = html;
     return div.innerHTML;
+
 }
